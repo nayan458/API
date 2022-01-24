@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            align-items: center;
+            text-align: center;
+            padding-left: 0.1px;
+            font-size: 30px;
+            margin: 20px;
+        }
+        #murbutton{
+            margin: 10px;
+            align-items: center;
+            text-align: center;
+            padding: 10px;
+            outline: none;
+            border: 3px solid rgb(53, 97, 218);
+            font-size: large;
+            border-radius: 20px;
+            color: white;
+            background-color: black;
+        }
+        .btn{
+            margin: 10px;
+            align-items: center;
+            text-align: center;
+            padding: 10px;
+            outline: none;
+            border: 3px solid rgb(53, 97, 218);
+            font-size: large;
+            border-radius: 20px;
+            color: white;
+            background-color: black;
+        }
+        #btn2{display: none;}
+    </style>
+</head>
+<body>
+    <div class="time">
+        <p>Number : <span id="num"></span></p>
+        <button class="btn" id="s">start</button>
+        <button class="btn" id="w">stop</button>
+    </div>
+    <script>
+        let num1 = 0;
+        // geting number display id
+        const var1 = document.getElementById('num');
+
+        // getting start button id
+        const var2 = document.getElementById('s');
+
+        // getting stop button id
+        const var3 = document.getElementById('w');
+
+        const strtfunc_00 = () =>{
+            var1.innerHTML = "Loading...";
+            refid = setInterval(() => {
+                num1++;
+                var1.innerHTML = `${num1}`;
+            }, 1000);
+        };
+
+        var2.addEventListener('click',strtfunc_00);
+
+        const stpfunc_00 = ()=>{
+            clearInterval(refid);
+            num1 = -1;
+        };
+
+        var3.addEventListener('click',stpfunc_00);
+
+    </script>
+</body>
+</html>

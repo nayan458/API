@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            align-items: center;
+            text-align: center;
+            padding-left: 0.1px;
+            font-size: 30px;
+            margin: 20px;
+        }
+        #murbutton{
+            margin: 10px;
+            align-items: center;
+            text-align: center;
+            padding: 10px;
+            outline: none;
+            border: 3px solid rgb(53, 97, 218);
+            font-size: large;
+            border-radius: 20px;
+            color: white;
+            background-color: black;
+        }
+        .btn{
+            margin: 10px;
+            align-items: center;
+            text-align: center;
+            padding: 10px;
+            outline: none;
+            border: 3px solid rgb(53, 97, 218);
+            font-size: large;
+            border-radius: 20px;
+            color: white;
+            background-color: black;
+        }
+        /* #btn2{display: none;} */
+    </style>
+</head>
+<body>
+    <div class="time">
+        <p>Try the buttons</p>
+            <br>
+        <p id="show"></p><br>
+        <button class="btn" id="btn1">Try it</button>
+
+        <button class="btn" id="btn2">Stop</button>
+    </div>
+    <script>
+        const show = document.getElementById('show');
+        const btn1 = document.getElementById('btn1');
+        const btn2 = document.getElementById('btn2');
+
+        const fire = ()=>{
+            show.innerHTML = "Loading...";
+            btn2.style.display = "block";
+            refid = setTimeout(() => {
+                show.innerHTML = "Good job";
+                btn2.style.display = "none";
+            }, 3000);
+        };
+
+        const water = () =>{
+            clearTimeout(refid);
+            show.innerHTML = "Event STOPED successfully";
+
+        };
+        btn1.addEventListener('click',fire);
+
+        btn2.addEventListener('click',water);
+
+
+        // const dsplybtn = document.getElementById('btn1');
+        // dsplybtn.addEventListener('click',()=>{document.getElementById('btn2').style.display = "block"; document.getElementById('show').innerHTML = "Loading...";});
+        // const myfunc = () =>{document.getElementById('show').innerHTML = "Good Job"};
+        // const myVar = dsplybtn.addEventListener('click',setTimeout(myfunc,5000));
+
+        // document.getElementById('btn2').addEventListener('click',clearTimeout(myVar));
+        // const stpBtn = document.getElementById('btn2');
+        // // const stp = () =>{clearTimeout(myVar); stpBtn.style.display = "none"};
+        // stpBtn.addEventListener('click',stp= () =>{clearTimeout(myVar); stpBtn.style.display = "none";document.getElementById('show').innerHTML = "Stop"});
+    </script>
+    <div class="cont">
+        <p class="para" id="para1">I am para 1</p>
+        <p class="para" id="para2">I am para 2</p>
+        <p class="para" id="para3">I am para 3</p>
+    </div>
+    <button id="murbutton" onclick="chngcont()">click me</button>
+    <div id="cng">Good morning nayan</div>
+    <div><ul>
+        <li class="cls3">list1</li>
+        <li class="cls3">list2</li>
+        <li class="cls3">list3</li>
+    </ul></div>
+    <div><a href="#" onclick='alert("first way \nI am useless alert")'>ancer teg 1</a></div>
+    <div></div><a href="#" onclick='functioncal()'>ancer teg 2</a></div>
+    <div><a href="#" id="func">ancer teg 3</a></div>
+    <div><a href="#" id="func4">ancer teg 4</a></div>
+    <div><a href="#" id="func5">ancer teg 5</a></div>
+    <!-- EVENT OBJECTS -->
+    <div><a href="#" id="func6">ancer teg 6</a></div>
+    <div>
+        <input type="text id="hagura" class="input" onkeypress="keypress()" onkeydown="keydown()" onkeyup="keyup()" ><br><hr>
+        <p id="key1"></p>
+        <p id="keys"></p>
+
+    </div>
+    <!-- INPUT FORM EVENT -->
+    <!-- time event -->
+    
+</body>
+<script>
+    const chngcont = () =>{
+    const headcng = document.getElementById('cng');
+    headcng.innerHTML = "Welcome home Nayan";
+    const num1 = document.querySelectorAll('.para');
+    const num2 = document.querySelector('#para3');
+    num2.innerHTML = "I am changed";
+    console.log(num1);
+                        };
+
+    // console.log(document.querySelector('ul li.cls3').innerHTML);
+
+    // METHOD OF FUNCTION CALL()
+    // FIRST WAY
+
+    functioncal=()=>{
+        alert("second way \nthis is a function call");
+    }
+
+    // SECOND WAY
+    const num1 = document.getElementById('func');
+    num1.onclick = ()=>{
+        alert("this is a thired way of function call");
+    }
+    // const numFunc = document.getElementById('func')
+
+    // FOURTH WAY
+    const num2 = document.getElementById('func4');
+    num2.addEventListener('click',()=>{alert("This is a fourth \nway of function call")})
+
+    // FIFTH WAY
+    const num3 = document.querySelector('#func5');
+    num3.addEventListener('click',()=>{
+        alert("This a fifth \nway of function call");
+    })
+
+    // 
+    const checkEvent = () =>{
+        alert("WE are learning event object");
+        console.log(event);
+        console.log(event.type);
+        console.log(event.target);
+    }
+    const num4  = document.getElementById('func6');
+    num4.addEventListener('click',checkEvent);
+
+    // Key events
+    const keypress = () =>{
+        document.getElementById('key1').innerHTML = `You pressed ${event.key} and its code is ${event.code}`;
+    }
+
+    const keydown = () =>{
+        document.getElementById('keys').innerHTML = 'Key is Down';
+    }
+
+    const keyup = () =>{
+        document.getElementById('keys').innerHTML = 'key is up';
+    }
+
+    // INPUT FORM EVENT
+
+    // ***************
+
+    
+</script>
+</html>

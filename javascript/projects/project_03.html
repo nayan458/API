@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .cont{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content:space-between;
+            
+        }
+        .cont_00{
+            width: 10rem;
+            height: 10rem;
+            background-color: rgb(143, 223, 219);
+            border: 2px solid black
+        }
+    </style>
+</head>
+<body>
+    <div class="cont">
+        <div class="cont_00">
+            <div class="counter" data-target="3000"></div>
+        <span>our Happy Clients</span>
+        </div>
+
+
+        <div class="cont_00">
+            <div class="counter" data-target="4000"></div>
+            <span>our Happy Clients</span>
+        </div>
+        
+        <div class="cont_00">
+            <div class="counter" data-target="5000"></div>
+        <span>our Happy Clients</span>
+        </div>
+    </div>
+    <script>
+        const counter = document.querySelectorAll('.counter');
+        counter.forEach((counter)=>{
+            // console.log(counter);
+            counter.innerHTML = 0;
+            const updateCounter =()=>{ 
+                const targertCount = +counter.getAttribute('data-target'); // to convert into number
+                // console.log(targertCount);
+
+                const startingCount = Number(counter.innerHTML);
+                const incr = targertCount / 100;
+
+                console.log(incr);
+
+                if(startingCount < targertCount){
+                    counter.innerHTML = `${Math.round(startingCount + incr)}`;
+                    setTimeout(updateCounter, 10);
+                }
+                else{
+                    counter.innerHTML = targertCount;
+                }
+            }
+            updateCounter();
+        })
+        
+    </script>
+    
+</body>
+</html>

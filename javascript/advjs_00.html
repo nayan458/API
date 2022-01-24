@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #cont1{
+            background-color: rgba(85, 240, 85, 0.877);
+            padding: 10%;
+            height: 20vh;
+            width: 40vh;
+            margin: 100px;
+            border: 20px solid springgreen;
+            cursor:pointer;
+        }
+        #cont2{
+            background-color: rgba(163, 97, 81, 0.945);
+            height: 100%;
+            width: 100%;
+            border: 10px solid rgba(163, 97, 81, 0.945);
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="cont1">
+        <div id="cont2">
+            <!--  code if any -->
+        </div>
+    </div>
+    <script>
+        const var1 = document.getElementById('cont1');
+        const var2 = document.getElementById('cont2');
+
+        //////////////    FUNCTION     ///////////////
+        parentcall=()=>{alert('Parent  Call');console.log('parent call')};
+        childcall =()=>{alert('Child  call');console.log("chiled call");};
+
+        //////////      Event Listener     ///////////
+        var1.addEventListener('click',parentcall,true);
+        var2.addEventListener('click',childcall,true);
+    </script>
+</body>
+</html>

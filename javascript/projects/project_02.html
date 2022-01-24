@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* div{ */
+            /* place-items: center; */
+            /* text-align: center; */
+            /* background-color: blue; */
+        /* } */
+        body{
+            background-color: rgb(235, 218, 125);
+        }
+            #frm{
+                background-color: rgb(228, 104, 217);
+                place-items: center;
+                display: grid;
+                width: 30rem;
+                padding: 30px;
+                font-size: 20px;
+            }
+            #btn{
+                color: white;
+                background-color: black;
+                cursor: pointer;
+                border-radius: 6px;
+            }
+    </style>
+</head>
+<body>
+    <div>
+    <form action="" id="frm" onsubmit="calculator(); return false">
+        <label for="">Please enter the temperature you'd like to convert</label>
+        <p id="temp_text"><br></p>
+        <div>
+        <input id="tempV" type="number"/>
+        <select name="temp_diff" id="temp">
+            <!-- <option value="">temperature</option> -->
+            <option value="cel">celcious</option>
+            <option value="far">farenhite</option>
+        </select>
+        </div>
+        <br/>
+        <button id="btn" type="submit">submit</button>
+    </form>
+    </div>
+    <script>
+        const calculator = () =>{
+            const temp_num1 = document.getElementById('tempV').value;
+            console.log(temp_num1);
+
+            const temp_selected = document.getElementById('temp_diff');
+            // const temp_selected = document.getAnimations('temp_diff');
+
+            // console.log(temp_selected.value);
+
+            const selectVal = temp_diff.optiions[temp_selected.selectedIndex];
+            console.log(selectVal);
+        }
+    </script>
+</body>
+</html>

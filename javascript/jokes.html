@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin:0%;
+            background-image: url(futuristic-scifi-abstract-blue-purple-260nw-1124255354.webp);
+            /* background-image: url(img/futuristic-scifi-abstract-blue-purple-260nw-1124255354.webp); */
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .cont{
+            margin-top: 30px;
+            border: 2px liqu;
+            align-items: center;
+            align-content: center;
+            text-align: center;
+            padding: 20px;
+            background-color: rgba(124, 111, 111, 0.288);
+            width: 30rem;
+            margin-left: 40px;
+            border-radius: 20px;
+            color: rgba(255, 250, 250, 0.993);
+        }
+        #btn{
+            margin: 10px;
+            animation: bouncing 3s ease 0s infinite;
+            align-items: center;
+            text-align: center;
+            padding: 10px;
+            outline: none;
+            border: 3px solid rgb(53, 97, 218);
+            /* font-size: large; */
+            border-radius: 20px;
+            color: white;
+            background-color: rgba(34, 33, 33, 0.76);
+            cursor: pointer;
+            box-sizing: border-box;
+            box-shadow:0 10px rgba(113, 231, 89, 0.521) ;
+            animation: bouncing 2s ease-in-out 0s infinite;
+        }
+                            
+    .flex_cont{
+
+            box-sizing: border-box;
+
+            /* width: 300px; */
+
+            /* border: 2px solid black; */
+
+            /* animation: bouncing 3s ease 0s infinite; */
+
+            /* background: darkblue; */
+
+            /* border-radius: 50%; */
+
+            display: inline-block;
+
+            color: white;
+
+            cursor: pointer;
+
+            font-weight: 300;
+
+            letter-spacing: 0.2;
+
+            padding: 1em 2em 1.1em;
+
+            position: relative;
+
+            text-decoration: none;
+
+            text-transform: uppercase;
+
+            vertical-align: top;
+
+            margin-top: 100px;
+
+            background-color: black;
+            
+    animation: bouncing 2s ease-in-out 0s infinite;
+}
+
+            @keyframes bouncing{
+
+                0%{
+
+                    /* bottom: 0; */
+
+                    /* left: 0; */
+                    /* font-size: 30px; */
+                    box-shadow:0 10px 10px rgba(58, 108, 245, 0.747);
+                    /* box-shadow:0 20px 50px rgb(53, 97, 218); */
+                    
+                }
+                
+                50%{
+                    /* font-size: ; */
+                    
+                    /* bottom: 100px;       */
+                    
+                    /* right: 100px; */
+                    
+                    /* box-shadow:0 10px 10px rgba(58, 108, 245, 0.747); */
+                    box-shadow:0 20px 50px rgb(53, 97, 218);
+                    
+                }
+                
+                100%{
+                    
+                    /* bottom: 0; */
+                    
+                    /* left: 0; */
+                    
+                    box-shadow:0 10px 10px rgba(58, 108, 245, 0.747);
+
+                }
+
+            }
+
+
+    </style>
+</head>
+<body><div class="body">
+    <div class="cont" id="mCont">
+        <h3>Best jokes that won't make you laugh</h3>
+        <div class="joke" id="joke">Awesom Jokes is Loading...</div>
+        <br>
+        <button id="btn">Next Joke</button>
+    </div>
+    </div>
+</body>
+<!-- <script>// 21638 
+    // 22300GET https://icanhazdadjoke.com/
+</script> -->
+    <!-- <script>
+        const joke = document.querySelector('#joke');
+        const btn = document.querySelector('#btn');
+
+        const setHader= {
+            headers : {
+                Accept : "application/json",
+            }
+        }
+        const crackJoke=()=>{
+                fetch('https://icanhazdadjoke.com',setHader)
+                .then((res) => res.json())
+                .then((data)=>joke.innerHTML = data.joke)
+                .catch((error)=>console.log(error))
+        }
+        btn.addEventListener('click',crackJoke);
+        crackJoke();
+    </script> -->
+<script>
+         const joke = document.querySelector('#joke');
+        const btn = document.querySelector('#btn');
+
+        // async function crackJoke(){}
+
+        const crackJoke = async() =>{
+            try{
+                const setHadr = {
+                    headers: {
+                        Accept : "application/json"
+                    }
+                }
+                const res = await fetch('https://icanhazdadjoke.com',setHadr)
+                const data = await res.json();
+                joke.innerHTML = data.joke;
+            }catch(err){
+                console.log(`the erro is ${err}`);
+                joke.innerHTML = `${err}`;
+            }
+        }
+
+        btn.addEventListener('click',crackJoke);
+        crackJoke();
+</script>
+</html>

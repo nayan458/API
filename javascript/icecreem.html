@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            align-items: center;
+            text-align: center;
+            padding-left: 0.1px;
+            font-size: 30px;
+            margin: 20px;
+        }
+        #murbutton{
+            margin: 10px;
+            align-items: center;
+            text-align: center;
+            padding: 10px;
+            outline: none;
+            border: 3px solid rgb(53, 97, 218);
+            font-size: large;
+            border-radius: 20px;
+            color: white;
+            background-color: black;
+        }
+        .btn{
+            margin: 10px;
+            align-items: center;
+            text-align: center;
+            padding: 10px;
+            outline: none;
+            border: 3px solid rgb(53, 97, 218);
+            font-size: large;
+            border-radius: 20px;
+            color: white;
+            background-color: black;
+        }
+        /* #btn2{display: none;} */
+    </style>
+</head>
+<body>
+    <div>Enter your name<input type="text" id="name"></div>
+    <div>
+    <label>Chose an ice creem flavour
+        <select name="iceCream" id="ic">
+            <option>Select One...</option>
+            <option>Chocolate</option>
+            <option value="v">Vanila</option>
+            <option value="s">sardine</option>
+        </select>
+    </label></div>
+    <div id="result"></div>
+    <script>
+        const name = document.getElementById('name');
+        const iceCream = document.getElementById('ic');
+        const result = document.getElementById('result');
+
+        iceCream.addEventListener('change',()=>{
+            result.innerHTML = `${name.value} want icecream of ${iceCream.value} flavour`;
+        })
+        
+    </script>
+    
+</body>
+</html>

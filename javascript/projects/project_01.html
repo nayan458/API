@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            background-color: rgb(57, 57, 112);
+            margin: 0%;
+            padding: 5%;
+        }
+    </style>
+</head>
+<body>
+    <div class="cont"><h1>I am Thermometer <span id="temp" class="fa"></span></h1></div>
+    <script>
+        const showTemp = () =>{
+            const temp = document.getElementById('temp');
+            temp.style.color = "#fff"
+            temp.innerHTML = "T";
+            setTimeout(() => {
+                temp.innerHTML = "Te";
+            }, 600);
+            setTimeout(() => {
+                temp.innerHTML = "Tem";
+            }, 1200);
+            setTimeout(() => {
+                temp.style.color = "red";
+                temp.innerHTML = "Temp";
+            }, 1800);
+            // setTimeout(() => {
+            //     showTemp();
+            // }, 4000);
+        }
+        showTemp();
+
+        setInterval(() => {
+            showTemp();
+        }, 2400);
+
+
+    </script>
+</body>
+</html>
